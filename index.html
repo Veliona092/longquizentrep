@@ -46,188 +46,240 @@
   <script>
 const questions = [
   {
-    question: "Authors Hisrich and Peters' definition of business plan: It is a written document prepared by the entrepreneur that describes all the relevant external and internal elements involved in starting a new venture.",
-    type: "confirmation",
-    answer: ["yes"]
+    question: "According to Hisrich and Peters, a business plan is best defined as:",
+    choices: [
+      "A written document prepared by the entrepreneur",
+      "An oral presentation to investors",
+      "A financial statement",
+      "A marketing brochure"
+    ],
+    answer: "A written document prepared by the entrepreneur"
   },
   {
-    question: "David E. Gumpert's Concept and Definition of a Business Plan: A business plan is a ________ document that conveys the excitement and promise of your business to any potential backers or stakeholders.",
-    answer: ["selling"]
+    question: "David E. Gumpert defines a business plan as a ________ document that conveys excitement and promise to stakeholders.",
+    choices: ["Selling", "Financial", "Technical", "Legal"],
+    answer: "Selling"
   },
   {
-    question: "Principles of planning - Planning must be ____",
-    answer: ["realistic"]
+    question: "Principles of planning: Planning must be ____",
+    choices: ["Realistic", "Imaginary", "Rigid", "Random"],
+    answer: "Realistic"
   },
   {
-    question: "Planning must be based on ____ ____",
-    answer: ["felt needs"]
+    question: "Principles of planning: Planning must be based on ____ ____",
+    choices: ["Felt needs", "Assumptions", "Trends", "Predictions"],
+    answer: "Felt needs"
   },
   {
-    question: "Planning must be ____",
-    answer: ["flexible"]
+    question: "Principles of planning: Planning must be ____",
+    choices: ["Flexible", "Fixed", "Strict", "Unchanging"],
+    answer: "Flexible"
   },
   {
-    question: "Planning must start with ____",
-    answer: ["simple projects"]
+    question: "Principles of planning: Planning must start with ____",
+    choices: ["Simple projects", "Complex ventures", "Large investments", "International expansion"],
+    answer: "Simple projects"
+  },
+
+  // Stages of business planning (split into separate MCQs)
+  {
+    question: "Which stage of business planning involves no formal process?",
+    choices: ["Unplanned stage", "Budgeting system", "Annual planning stage", "Strategic planning stage"],
+    answer: "Unplanned stage"
   },
   {
-    question: "Stages of business planning (P.Kotler)",
-    answer: ["Unplanned stage", "budgeting system", "annual planning stage", "strategic planning stage"]
+    question: "Which stage of business planning focuses on allocating financial resources?",
+    choices: ["Budgeting system", "Unplanned stage", "Annual planning stage", "Strategic planning stage"],
+    answer: "Budgeting system"
   },
   {
-    question: "Criteria of effective planning (main idea)",
-    answer: ["The plan should indicate the time allowed for each activity there should target data for completing the activity."]
+    question: "Which stage of business planning involves yearly review and targets?",
+    choices: ["Annual planning stage", "Unplanned stage", "Budgeting system", "Strategic planning stage"],
+    answer: "Annual planning stage"
   },
   {
-    question: "Component of business planning (list main ones)",
-    answer: ["SWOT", "Objectives", "Strategies", "Time Frame"]
+    question: "Which stage of business planning emphasizes long-term direction?",
+    choices: ["Strategic planning stage", "Unplanned stage", "Budgeting system", "Annual planning stage"],
+    answer: "Strategic planning stage"
+  },
+
+  {
+    question: "Which of the following is a key component of business planning that analyzes strengths, weaknesses, opportunities, and threats?",
+    choices: ["SWOT", "Budgeting", "Marketing Mix", "Cash Flow"],
+    answer: "SWOT"
   },
   {
-    question: "Characteristic of a sound business plan (list them)",
-    answer: ["objective", "clear", "logical and simple", "flexible", "stable", "complete and integrated"]
+    question: "Which of the following is a key component of business planning that defines what the business aims to achieve?",
+    choices: ["Objectives", "Random goals", "Unclear vision", "Assumptions"],
+    answer: "Objectives"
   },
   {
-    question: "Why do we need a business plan? (list main reasons)",
-    answer: ["to project general picture of the business project", "to serve as a guide in implementing the business", "to serve as a major input investment"]
+    question: "Which of the following is a key component of business planning that outlines the methods to reach goals?",
+    choices: ["Strategies", "Guesswork", "Daydreams", "Unplanned actions"],
+    answer: "Strategies"
   },
   {
-    question: "Steps in business planning (list the 7 steps in order)",
-    answer: [
-      "Evaluate your personal resources and interests, and the resources of the community",
-      "analyze your market",
-      "choose a proper business location",
-      "prepare a financial plan",
-      "prepare a production plan",
-      "prepare an organizational plan",
-      "prepare a management plan"
-    ]
+    question: "Which of the following is a key component of business planning that specifies deadlines and schedules?",
+    choices: ["Time Frame", "Unlimited duration", "Undefined period", "No schedule"],
+    answer: "Time Frame"
+  },
+
+  {
+    question: "Which of the following is a characteristic of a sound business plan?",
+    choices: ["Objective", "Confusing", "Rigid", "Incomplete"],
+    answer: "Objective"
   },
   {
-    question: "Importance of business planning (list the benefits mentioned)",
-    answer: ["planning can eliminate business risk", "planning can minimize cost of production", "planning can detect the weaknesses of the operations"]
+    question: "Which of the following is a characteristic of a sound business plan?",
+    choices: ["Clear", "Ambiguous", "Vague", "Contradictory"],
+    answer: "Clear"
   },
   {
-    question: "One of a feature of a small business enterprise",
-    answer: ["the owner-manager employs his wife and children in a small enterprise"]
+    question: "Which of the following is a characteristic of a sound business plan?",
+    choices: ["Logical and simple", "Complicated", "Illogical", "Unclear"],
+    answer: "Logical and simple"
   },
   {
-    question: "Choosing the legal form of your business (list the options)",
-    answer: ["sole proprietorship", "partnership", "corporation", "cooperative"]
+    question: "Which of the following is a characteristic of a sound business plan?",
+    choices: ["Flexible", "Fixed", "Strict", "Unchanging"],
+    answer: "Flexible"
+  },
+
+  {
+    question: "Which legal form of business is owned and managed by one person?",
+    choices: ["Sole proprietorship", "Partnership", "Corporation", "Cooperative"],
+    answer: "Sole proprietorship"
   },
   {
-    question: "Things to consider in selecting the best legal form of organization (list them)",
-    answer: ["ownership", "management", "financing", "liability", "incentives", "taxation", "retention of income", "protection"]
+    question: "Which legal form of business involves two or more people sharing ownership?",
+    choices: ["Partnership", "Sole proprietorship", "Corporation", "Cooperative"],
+    answer: "Partnership"
   },
   {
-    question: "Three things to remember from chapter 7 ppt",
-    answer: ["sole proprietorship", "partnership", "corporation"]
+    question: "Which legal form of business is a separate legal entity owned by shareholders?",
+    choices: ["Corporation", "Partnership", "Sole proprietorship", "Cooperative"],
+    answer: "Corporation"
   },
   {
-    question: "Principles of cooperative (list them)",
-    answer: ["open and voluntary membership", "democratic control", "limited interest on capital", "division on net surplus", "cooperative education", "cooperation among cooperatives"]
+    question: "Which legal form of business is owned and operated by members for mutual benefit?",
+    choices: ["Cooperative", "Corporation", "Partnership", "Sole proprietorship"],
+    answer: "Cooperative"
+  },
+
+  {
+    question: "Which principle of cooperative emphasizes voluntary participation?",
+    choices: ["Open and voluntary membership", "Exclusive membership", "Profit maximization", "Centralized control"],
+    answer: "Open and voluntary membership"
   },
   {
-    question: "Capital requirements (list the types)",
-    answer: ["fixed capital", "working capital", "growth capital"]
+    question: "Which principle of cooperative emphasizes equal voting rights?",
+    choices: ["Democratic control", "Autocratic control", "Hierarchical control", "Profit control"],
+    answer: "Democratic control"
   },
   {
-    question: "Owner's equity",
-    answer: ["contribution of the owner to the capital of the business and is evidence by the insurance of stockholder's certificate issued by the corporation"]
+    question: "Which principle of cooperative limits returns on invested funds?",
+    choices: ["Limited interest on capital", "Unlimited interest on capital", "No interest on capital", "High dividends"],
+    answer: "Limited interest on capital"
   },
   {
-    question: "Long term borrowings",
-    answer: ["organizations whose main businesses are generally meant for providing financial assistance"]
+    question: "Which principle of cooperative ensures fair distribution of earnings?",
+    choices: ["Division on net surplus", "Division on gross sales", "Division on assets", "Division on liabilities"],
+    answer: "Division on net surplus"
+  },
+
+  {
+    question: "Which of the following is one of the Cs of Credit?",
+    choices: ["Collateral", "Confusion", "Currency", "Calculation"],
+    answer: "Collateral"
   },
   {
-    question: "Short-term creditors",
-    answer: ["short term creditors take the forms of financiers on a short-term basis lasting to one year or less"]
+    question: "Which of the following is one of the Cs of Credit?",
+    choices: ["Capacity", "Incapacity", "Weakness", "Deficit"],
+    answer: "Capacity"
   },
   {
-    question: "The IP process (IPO process duration and key activities)",
-    answer: ["the entire process can take as little as six months to complete, but some companies take eighteen months or longer to go public, during that time, documentation needs to be submitted, as the effective dates approach, roadshows will have to be prepared and executed"]
+    question: "Which of the following is one of the Cs of Credit?",
+    choices: ["Character", "Reputation", "Dishonesty", "Fraud"],
+    answer: "Character"
   },
   {
-    question: "The IPO Process questions; during this process the firm's owner and managers will be answering such questions as (list examples)",
-    answer: ["what do we need to do before going public?", "what are the legal requirements?", "who should be responsible for the different activities, and how?"]
+    question: "Which of the following is one of the Cs of Credit?",
+    choices: ["Contract", "Agreement", "Promise", "Clause"],
+    answer: "Contract"
   },
   {
-    question: "Borrowing from the banks questions (list the key questions)",
-    answer: ["how much money you really want?", "what are you going to do with the money? do this in business plan", "why is the loan needed for the business? be prepared with specific reasons as why need to borrow money", "why do you need our depositor's money?"]
-  },
-  {
-    question: "The Cs of Credit",
-    answer: ["Collateral", "Capacity", "Character", "Contract", "Conditions"]
+    question: "Which of the following is one of the Cs of Credit?",
+    choices: ["Conditions", "Exceptions", "Guarantees", "Restrictions"],
+    answer: "Conditions"
   }
 ];
 
 
 
-  const quizForm = document.getElementById('quizForm');
+const quizForm = document.getElementById('quizForm');
 
-  // Render Quiz
-  function renderQuiz() {
-    // Use questions directly, no shuffling
-    questions.forEach((q, index) => {
-      const questionDiv = document.createElement('div');
-      questionDiv.className = 'question';
-      questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+// Render Quiz
+function renderQuiz() {
+  // Use questions directly, no shuffling
+  questions.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question';
+    questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
 
-      const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-
-      answers.forEach((_, ansIndex) => {
-        questionDiv.innerHTML += `
+    // Render choices as radio buttons
+    q.choices.forEach((choice, choiceIndex) => {
+      const letter = String.fromCharCode(65 + choiceIndex); // A, B, C, D
+      questionDiv.innerHTML += `
+        <label>
           <input 
-            type="text" 
-            name="question${index}answer${ansIndex}" 
-            class="answerInput" 
-            aria-label="Answer for question ${index + 1}" 
-            autocomplete="off" 
+            type="radio" 
+            name="question${index}" 
+            value="${choice}" 
             required
           >
-        `;
-      });
-
-      questionDiv.innerHTML += `<p class="correctAnswer" style="display: none;">Correct answer: ${answers.join(', ')}</p>`;
-      quizForm.appendChild(questionDiv);
-    });
-  }
-
-  // Submit Quiz
-  function submitQuiz() {
-    let score = 0;
-    const correctAnswers = document.querySelectorAll('.correctAnswer');
-    const totalQuestions = questions.length;
-
-    questions.forEach((q, index) => {
-      const answers = Array.isArray(q.answer) ? q.answer.map(a => a.toLowerCase()) : [q.answer.toLowerCase()];
-      const userAnswers = answers.map((_, ansIndex) => {
-        const input = document.querySelector(`input[name="question${index}answer${ansIndex}"]`);
-        return input ? input.value.trim().toLowerCase() : "";
-      });
-
-      // Validate answers
-      const isCorrect = userAnswers.every((userAnswer, i) => answers[i] === userAnswer);
-      if (isCorrect) {
-        score++;
-        correctAnswers[index].style.display = 'none';
-      } else {
-        correctAnswers[index].style.display = 'block';
-      }
+          ${letter}. ${choice}
+        </label><br>
+      `;
     });
 
-    // Display final score
-    document.getElementById('score').innerText = `Your score is ${score} out of ${totalQuestions}`;
-  }
+    // Hidden correct answer for feedback
+    questionDiv.innerHTML += `<p class="correctAnswer" style="display: none;">Correct answer: ${q.answer}</p>`;
+    quizForm.appendChild(questionDiv);
+  });
+}
 
-  // Reset Quiz
-  function resetQuiz() {
-    quizForm.innerHTML = '';
-    document.getElementById('score').innerText = '';
-    renderQuiz();
-  }
+// Submit Quiz
+function submitQuiz() {
+  let score = 0;
+  const correctAnswers = document.querySelectorAll('.correctAnswer');
+  const totalQuestions = questions.length;
 
-  // Initialize quiz on page load
+  questions.forEach((q, index) => {
+    const selected = document.querySelector(`input[name="question${index}"]:checked`);
+    const userAnswer = selected ? selected.value.trim().toLowerCase() : "";
+    const correctAnswer = q.answer.toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+      score++;
+      correctAnswers[index].style.display = 'none';
+    } else {
+      correctAnswers[index].style.display = 'block';
+    }
+  });
+
+  // Display final score
+  document.getElementById('score').innerText = `Your score is ${score} out of ${totalQuestions}`;
+}
+
+// Reset Quiz
+function resetQuiz() {
+  quizForm.innerHTML = '';
+  document.getElementById('score').innerText = '';
   renderQuiz();
+}
+
+// Initialize quiz on page load
+renderQuiz();
 </script>
 </body>
 </html>
