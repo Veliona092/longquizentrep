@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethics & Philosophy Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .answerInput {
+      margin-top: 5px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .correctAnswer {
+      color: green;
+      font-style: italic;
+      margin-top: 5px;
+    }
+    #score {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    #message {
+      color: blue;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ethics & Philosophy Quiz</h1>
+  <p id="message">Answer the questions below and click "Submit" to see your score.</p>
+  <form id="quizForm" onsubmit="return false;" autocomplete="off">
+    <!-- Questions will be inserted here by JavaScript -->
+  </form>
+  <button type="button" onclick="submitQuiz()">Submit</button>
+  <button type="button" onclick="resetQuiz()">Reset</button>
+  <div id="score"></div>
+
+  <script>
+const questions = [
+  {
+    question: "Authors Hisrich and Peters' definition of business plan: It is a written document prepared by the entrepreneur that describes all the relevant external and internal elements involved in starting a new venture.",
+    type: "confirmation",
+    answer: ["yes"]
+  },
+  {
+    question: "David E. Gumpert's Concept and Definition of a Business Plan: A business plan is a ________ document that conveys the excitement and promise of your business to any potential backers or stakeholders.",
+    answer: ["selling"]
+  },
+  {
+    question: "Principles of planning - Planning must be ____",
+    answer: ["realistic"]
+  },
+  {
+    question: "Planning must be based on ____ ____",
+    answer: ["felt needs"]
+  },
+  {
+    question: "Planning must be ____",
+    answer: ["flexible"]
+  },
+  {
+    question: "Planning must start with ____",
+    answer: ["simple projects"]
+  },
+  {
+    question: "Stages of business planning (P.Kotler)",
+    answer: ["Unplanned stage", "budgeting system", "annual planning stage", "strategic planning stage"]
+  },
+  {
+    question: "Criteria of effective planning (main idea)",
+    answer: ["The plan should indicate the time allowed for each activity there should target data for completing the activity."]
+  },
+  {
+    question: "Component of business planning (list main ones)",
+    answer: ["SWOT", "Objectives", "Strategies", "Time Frame"]
+  },
+  {
+    question: "Characteristic of a sound business plan (list them)",
+    answer: ["objective", "clear", "logical and simple", "flexible", "stable", "complete and integrated"]
+  },
+  {
+    question: "Why do we need a business plan? (list main reasons)",
+    answer: ["to project general picture of the business project", "to serve as a guide in implementing the business", "to serve as a major input investment"]
+  },
+  {
+    question: "Steps in business planning (list the 7 steps in order)",
+    answer: [
+      "Evaluate your personal resources and interests, and the resources of the community",
+      "analyze your market",
+      "choose a proper business location",
+      "prepare a financial plan",
+      "prepare a production plan",
+      "prepare an organizational plan",
+      "prepare a management plan"
+    ]
+  },
+  {
+    question: "Importance of business planning (list the benefits mentioned)",
+    answer: ["planning can eliminate business risk", "planning can minimize cost of production", "planning can detect the weaknesses of the operations"]
+  },
+  {
+    question: "One of a feature of a small business enterprise",
+    answer: ["the owner-manager employs his wife and children in a small enterprise"]
+  },
+  {
+    question: "Choosing the legal form of your business (list the options)",
+    answer: ["sole proprietorship", "partnership", "corporation", "cooperative"]
+  },
+  {
+    question: "Things to consider in selecting the best legal form of organization (list them)",
+    answer: ["ownership", "management", "financing", "liability", "incentives", "taxation", "retention of income", "protection"]
+  },
+  {
+    question: "Three things to remember from chapter 7 ppt",
+    answer: ["sole proprietorship", "partnership", "corporation"]
+  },
+  {
+    question: "Principles of cooperative (list them)",
+    answer: ["open and voluntary membership", "democratic control", "limited interest on capital", "division on net surplus", "cooperative education", "cooperation among cooperatives"]
+  },
+  {
+    question: "Capital requirements (list the types)",
+    answer: ["fixed capital", "working capital", "growth capital"]
+  },
+  {
+    question: "Owner's equity",
+    answer: ["contribution of the owner to the capital of the business and is evidence by the insurance of stockholder's certificate issued by the corporation"]
+  },
+  {
+    question: "Long term borrowings",
+    answer: ["organizations whose main businesses are generally meant for providing financial assistance"]
+  },
+  {
+    question: "Short-term creditors",
+    answer: ["short term creditors take the forms of financiers on a short-term basis lasting to one year or less"]
+  },
+  {
+    question: "The IP process (IPO process duration and key activities)",
+    answer: ["the entire process can take as little as six months to complete, but some companies take eighteen months or longer to go public, during that time, documentation needs to be submitted, as the effective dates approach, roadshows will have to be prepared and executed"]
+  },
+  {
+    question: "The IPO Process questions; during this process the firm's owner and managers will be answering such questions as (list examples)",
+    answer: ["what do we need to do before going public?", "what are the legal requirements?", "who should be responsible for the different activities, and how?"]
+  },
+  {
+    question: "Borrowing from the banks questions (list the key questions)",
+    answer: ["how much money you really want?", "what are you going to do with the money? do this in business plan", "why is the loan needed for the business? be prepared with specific reasons as why need to borrow money", "why do you need our depositor's money?"]
+  },
+  {
+    question: "The Cs of Credit",
+    answer: ["Collateral", "Capacity", "Character", "Contract", "Conditions"]
+  }
+];
+
+
+
+  const quizForm = document.getElementById('quizForm');
+
+  // Render Quiz
+  function renderQuiz() {
+    // Use questions directly, no shuffling
+    questions.forEach((q, index) => {
+      const questionDiv = document.createElement('div');
+      questionDiv.className = 'question';
+      questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+
+      const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+
+      answers.forEach((_, ansIndex) => {
+        questionDiv.innerHTML += `
+          <input 
+            type="text" 
+            name="question${index}answer${ansIndex}" 
+            class="answerInput" 
+            aria-label="Answer for question ${index + 1}" 
+            autocomplete="off" 
+            required
+          >
+        `;
+      });
+
+      questionDiv.innerHTML += `<p class="correctAnswer" style="display: none;">Correct answer: ${answers.join(', ')}</p>`;
+      quizForm.appendChild(questionDiv);
+    });
+  }
+
+  // Submit Quiz
+  function submitQuiz() {
+    let score = 0;
+    const correctAnswers = document.querySelectorAll('.correctAnswer');
+    const totalQuestions = questions.length;
+
+    questions.forEach((q, index) => {
+      const answers = Array.isArray(q.answer) ? q.answer.map(a => a.toLowerCase()) : [q.answer.toLowerCase()];
+      const userAnswers = answers.map((_, ansIndex) => {
+        const input = document.querySelector(`input[name="question${index}answer${ansIndex}"]`);
+        return input ? input.value.trim().toLowerCase() : "";
+      });
+
+      // Validate answers
+      const isCorrect = userAnswers.every((userAnswer, i) => answers[i] === userAnswer);
+      if (isCorrect) {
+        score++;
+        correctAnswers[index].style.display = 'none';
+      } else {
+        correctAnswers[index].style.display = 'block';
+      }
+    });
+
+    // Display final score
+    document.getElementById('score').innerText = `Your score is ${score} out of ${totalQuestions}`;
+  }
+
+  // Reset Quiz
+  function resetQuiz() {
+    quizForm.innerHTML = '';
+    document.getElementById('score').innerText = '';
+    renderQuiz();
+  }
+
+  // Initialize quiz on page load
+  renderQuiz();
+</script>
+</body>
+</html>
